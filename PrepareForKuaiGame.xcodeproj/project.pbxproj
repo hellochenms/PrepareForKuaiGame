@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9985D9D119F5F6A400A0506B /* ZhToPinyinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9985D9D019F5F6A400A0506B /* ZhToPinyinViewController.m */; };
+		99DFE1D219EA91F0008B20F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DFE1D119EA91F0008B20F2 /* Foundation.framework */; };
+		99DFE1D419EA91F0008B20F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DFE1D319EA91F0008B20F2 /* CoreGraphics.framework */; };
+		99DFE1D619EA91F0008B20F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99DFE1D519EA91F0008B20F2 /* UIKit.framework */; };
+		99DFE1DC19EA91F0008B20F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99DFE1DA19EA91F0008B20F2 /* InfoPlist.strings */; };
+		99DFE1DE19EA91F0008B20F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE1DD19EA91F0008B20F2 /* main.m */; };
+		99DFE1E219EA91F0008B20F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE1E119EA91F0008B20F2 /* AppDelegate.m */; };
+		99DFE1E419EA91F0008B20F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99DFE1E319EA91F0008B20F2 /* Images.xcassets */; };
+		99DFE20219EA9240008B20F2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE20119EA9240008B20F2 /* RootViewController.m */; };
+		99DFE20519EA924F008B20F2 /* _tempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE20419EA924F008B20F2 /* _tempViewController.m */; };
+		99DFE20B19EAA2A5008B20F2 /* ImageCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE20A19EAA2A5008B20F2 /* ImageCommentViewController.m */; };
+		99DFE20E19EAA2C6008B20F2 /* ImageCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE20D19EAA2C6008B20F2 /* ImageCommentView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9985D9CF19F5F6A400A0506B /* ZhToPinyinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhToPinyinViewController.h; sourceTree = "<group>"; };
+		9985D9D019F5F6A400A0506B /* ZhToPinyinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhToPinyinViewController.m; sourceTree = "<group>"; };
+		99DFE1CE19EA91F0008B20F2 /* PrepareForKuaiGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrepareForKuaiGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99DFE1D119EA91F0008B20F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		99DFE1D319EA91F0008B20F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		99DFE1D519EA91F0008B20F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		99DFE1D919EA91F0008B20F2 /* PrepareForKuaiGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrepareForKuaiGame-Info.plist"; sourceTree = "<group>"; };
+		99DFE1DB19EA91F0008B20F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		99DFE1DD19EA91F0008B20F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		99DFE1DF19EA91F0008B20F2 /* PrepareForKuaiGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrepareForKuaiGame-Prefix.pch"; sourceTree = "<group>"; };
+		99DFE1E019EA91F0008B20F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		99DFE1E119EA91F0008B20F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		99DFE1E319EA91F0008B20F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		99DFE1EA19EA91F0008B20F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		99DFE20019EA9240008B20F2 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		99DFE20119EA9240008B20F2 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		99DFE20319EA924F008B20F2 /* _tempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _tempViewController.h; sourceTree = "<group>"; };
+		99DFE20419EA924F008B20F2 /* _tempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _tempViewController.m; sourceTree = "<group>"; };
+		99DFE20919EAA2A5008B20F2 /* ImageCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCommentViewController.h; sourceTree = "<group>"; };
+		99DFE20A19EAA2A5008B20F2 /* ImageCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCommentViewController.m; sourceTree = "<group>"; };
+		99DFE20C19EAA2C6008B20F2 /* ImageCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCommentView.h; sourceTree = "<group>"; };
+		99DFE20D19EAA2C6008B20F2 /* ImageCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCommentView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99DFE1CB19EA91F0008B20F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99DFE1D419EA91F0008B20F2 /* CoreGraphics.framework in Frameworks */,
+				99DFE1D619EA91F0008B20F2 /* UIKit.framework in Frameworks */,
+				99DFE1D219EA91F0008B20F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9985D9CE19F5F65C00A0506B /* 2.中文转拼音 */ = {
+			isa = PBXGroup;
+			children = (
+				9985D9CF19F5F6A400A0506B /* ZhToPinyinViewController.h */,
+				9985D9D019F5F6A400A0506B /* ZhToPinyinViewController.m */,
+			);
+			name = "2.中文转拼音";
+			sourceTree = "<group>";
+		};
+		99DFE1C519EA91F0008B20F2 = {
+			isa = PBXGroup;
+			children = (
+				99DFE1D719EA91F0008B20F2 /* PrepareForKuaiGame */,
+				99DFE1D019EA91F0008B20F2 /* Frameworks */,
+				99DFE1CF19EA91F0008B20F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99DFE1CF19EA91F0008B20F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99DFE1CE19EA91F0008B20F2 /* PrepareForKuaiGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99DFE1D019EA91F0008B20F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99DFE1D119EA91F0008B20F2 /* Foundation.framework */,
+				99DFE1D319EA91F0008B20F2 /* CoreGraphics.framework */,
+				99DFE1D519EA91F0008B20F2 /* UIKit.framework */,
+				99DFE1EA19EA91F0008B20F2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99DFE1D719EA91F0008B20F2 /* PrepareForKuaiGame */ = {
+			isa = PBXGroup;
+			children = (
+				99DFE1E019EA91F0008B20F2 /* AppDelegate.h */,
+				99DFE1E119EA91F0008B20F2 /* AppDelegate.m */,
+				99DFE20019EA9240008B20F2 /* RootViewController.h */,
+				99DFE20119EA9240008B20F2 /* RootViewController.m */,
+				99DFE20319EA924F008B20F2 /* _tempViewController.h */,
+				99DFE20419EA924F008B20F2 /* _tempViewController.m */,
+				99DFE20719EA941F008B20F2 /* 1.图片吐槽 */,
+				9985D9CE19F5F65C00A0506B /* 2.中文转拼音 */,
+				99DFE1E319EA91F0008B20F2 /* Images.xcassets */,
+				99DFE1D819EA91F0008B20F2 /* Supporting Files */,
+			);
+			path = PrepareForKuaiGame;
+			sourceTree = "<group>";
+		};
+		99DFE1D819EA91F0008B20F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99DFE1D919EA91F0008B20F2 /* PrepareForKuaiGame-Info.plist */,
+				99DFE1DA19EA91F0008B20F2 /* InfoPlist.strings */,
+				99DFE1DD19EA91F0008B20F2 /* main.m */,
+				99DFE1DF19EA91F0008B20F2 /* PrepareForKuaiGame-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99DFE20719EA941F008B20F2 /* 1.图片吐槽 */ = {
+			isa = PBXGroup;
+			children = (
+				99DFE20919EAA2A5008B20F2 /* ImageCommentViewController.h */,
+				99DFE20A19EAA2A5008B20F2 /* ImageCommentViewController.m */,
+				99DFE20C19EAA2C6008B20F2 /* ImageCommentView.h */,
+				99DFE20D19EAA2C6008B20F2 /* ImageCommentView.m */,
+			);
+			name = "1.图片吐槽";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99DFE1CD19EA91F0008B20F2 /* PrepareForKuaiGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99DFE1FA19EA91F1008B20F2 /* Build configuration list for PBXNativeTarget "PrepareForKuaiGame" */;
+			buildPhases = (
+				99DFE1CA19EA91F0008B20F2 /* Sources */,
+				99DFE1CB19EA91F0008B20F2 /* Frameworks */,
+				99DFE1CC19EA91F0008B20F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrepareForKuaiGame;
+			productName = PrepareForKuaiGame;
+			productReference = 99DFE1CE19EA91F0008B20F2 /* PrepareForKuaiGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99DFE1C619EA91F0008B20F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = chenms.m2;
+			};
+			buildConfigurationList = 99DFE1C919EA91F0008B20F2 /* Build configuration list for PBXProject "PrepareForKuaiGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 99DFE1C519EA91F0008B20F2;
+			productRefGroup = 99DFE1CF19EA91F0008B20F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99DFE1CD19EA91F0008B20F2 /* PrepareForKuaiGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99DFE1CC19EA91F0008B20F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99DFE1DC19EA91F0008B20F2 /* InfoPlist.strings in Resources */,
+				99DFE1E419EA91F0008B20F2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99DFE1CA19EA91F0008B20F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99DFE20E19EAA2C6008B20F2 /* ImageCommentView.m in Sources */,
+				9985D9D119F5F6A400A0506B /* ZhToPinyinViewController.m in Sources */,
+				99DFE20B19EAA2A5008B20F2 /* ImageCommentViewController.m in Sources */,
+				99DFE20519EA924F008B20F2 /* _tempViewController.m in Sources */,
+				99DFE1E219EA91F0008B20F2 /* AppDelegate.m in Sources */,
+				99DFE1DE19EA91F0008B20F2 /* main.m in Sources */,
+				99DFE20219EA9240008B20F2 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		99DFE1DA19EA91F0008B20F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99DFE1DB19EA91F0008B20F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99DFE1F819EA91F1008B20F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Debug;
+		};
+		99DFE1F919EA91F1008B20F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Release;
+		};
+		99DFE1FB19EA91F1008B20F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrepareForKuaiGame/PrepareForKuaiGame-Prefix.pch";
+				INFOPLIST_FILE = "PrepareForKuaiGame/PrepareForKuaiGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		99DFE1FC19EA91F1008B20F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrepareForKuaiGame/PrepareForKuaiGame-Prefix.pch";
+				INFOPLIST_FILE = "PrepareForKuaiGame/PrepareForKuaiGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99DFE1C919EA91F0008B20F2 /* Build configuration list for PBXProject "PrepareForKuaiGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99DFE1F819EA91F1008B20F2 /* Debug */,
+				99DFE1F919EA91F1008B20F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99DFE1FA19EA91F1008B20F2 /* Build configuration list for PBXNativeTarget "PrepareForKuaiGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99DFE1FB19EA91F1008B20F2 /* Debug */,
+				99DFE1FC19EA91F1008B20F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99DFE1C619EA91F0008B20F2 /* Project object */;
+}
