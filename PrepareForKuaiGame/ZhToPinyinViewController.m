@@ -19,11 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (isIOS7) {
-        // view中有scrollView且使用系统的naviBar时，不写下句，则系统会自动调整scrollView的inset。
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
     
+    // view中有scrollView且使用系统的naviBar时，不写下句，则系统会自动调整scrollView的inset。
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor lightGrayColor];
     
     CGRect frame = [UIScreen mainScreen].bounds;

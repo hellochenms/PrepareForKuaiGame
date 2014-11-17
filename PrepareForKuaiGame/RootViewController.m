@@ -23,7 +23,9 @@
         _datas  = @[
                     @[@"临时测试", @"_tempViewController"],
                     @[@"图片吐槽", @"ImageCommentViewController"],
+                    @[@"图片吐槽无线", @"ImageCommentNoLineViewController"],
                     @[@"中文转拼音", @"ZhToPinyinViewController"],
+                    @[@"键盘适配iOS8", @"KeyboardAdaptViewController"],
                     ];
     }
     return self;

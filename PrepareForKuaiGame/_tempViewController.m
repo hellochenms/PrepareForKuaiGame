@@ -28,9 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor blackColor];
-    if (isIOS7) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(10, 10, 300, 30);
     button.backgroundColor = [UIColor blueColor];
@@ -40,6 +39,8 @@
 }
 
 - (void)onTapButton{
+    [[UIDevice currentDevice] userInterfaceIdiom];
+    NSLog(@"%d  %s", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad), __func__);
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PFKGNavigationController.h"
 #import "RootViewController.h"
 
 @implementation AppDelegate
@@ -16,7 +17,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     RootViewController *rootViewController = [RootViewController new];
-    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    PFKGNavigationController *naviController = [[PFKGNavigationController alloc] initWithRootViewController:rootViewController];
     self.window.rootViewController = naviController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
