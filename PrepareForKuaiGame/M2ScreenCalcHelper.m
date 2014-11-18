@@ -1,6 +1,6 @@
 //
-//  M2KeyboardCalcHelper.m
-//  PrepareForKuaiGame
+//  M2KeyboardCalcHelper.h
+//  chenms.m2
 //
 //  Created by Chen Meisong on 14/11/17.
 //  Copyright (c) 2014年 chenms.m2. All rights reserved.
