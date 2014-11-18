@@ -95,26 +95,4 @@
     return frame;
 }
 
-//// 适配textField的layout
-//- (void)adjustTextFieldLayoutWithIsShowingKeyboard:(BOOL)isShowingKeyboard {
-//    __weak typeof(self) weakSelf = self;
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        CGRect textFieldFrame = weakSelf.textField.frame;
-//        if (isShowingKeyboard) {
-//            CGPoint keyboardLeftTopPoint = [weakSelf.screenCalcHelper keyBoardLeftUpPointWithKeyboardFrame:weakSelf.keyboardFrame toView:weakSelf];
-//            textFieldFrame.origin.x = keyboardLeftTopPoint.x;
-//            textFieldFrame.origin.y = keyboardLeftTopPoint.y - CGRectGetHeight(textFieldFrame);
-//        } else {
-//            CGPoint screenLeftBottomPoint = [weakSelf.screenCalcHelper screenLeftBottomPointToView:weakSelf];
-//            textFieldFrame.origin.x = screenLeftBottomPoint.x;
-//            textFieldFrame.origin.y = screenLeftBottomPoint.y;
-//        }
-//        textFieldFrame.size.width = CGRectGetWidth([weakSelf.screenCalcHelper screenBounds]);
-//        [UIView animateWithDuration:weakSelf.keyboardAnimationDuration
-//                         animations:^{
-//                             weakSelf.textField.frame = textFieldFrame;
-//                         }];
-//    });
-//}
-
 @end
