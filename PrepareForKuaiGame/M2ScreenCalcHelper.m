@@ -74,7 +74,6 @@
     if (isIOS8) {
         frame = [UIScreen mainScreen].bounds;
     } else {
-        CGRect frame = CGRectZero;
         switch ([UIDevice currentDevice].orientation) {
             case UIDeviceOrientationPortrait:
             case UIDeviceOrientationPortraitUpsideDown:

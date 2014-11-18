@@ -12,12 +12,14 @@
 //  3、1与2中，iOS7及以前与iOS8有区别，适配；
 
 #import "KeyboardAdaptUnFullScreenView.h"
+#import "M2ScreenCalcHelper.h"
 
 @interface KeyboardAdaptUnFullScreenView ()<UITextFieldDelegate>
 @property (nonatomic) UIButton          *button;
 @property (nonatomic) UITextField       *textField;
 @property (nonatomic) CGRect            keyboardFrame;
 @property (nonatomic) NSTimeInterval    keyboardAnimationDuration;
+@property (nonatomic) M2ScreenCalcHelper    *screenCalcHelper;
 @end
 
 @implementation KeyboardAdaptUnFullScreenView
@@ -25,6 +27,10 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        //
+        _screenCalcHelper = [M2ScreenCalcHelper new];
+        
+        //
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
         _button.frame = CGRectZero;
         _button.backgroundColor = [UIColor cyanColor];
@@ -117,6 +123,7 @@
     [self adjustTextFieldLayoutWithIsShowingKeyboard:NO];
 }
 
+/*
 // 适配textField的layout
 - (void)adjustTextFieldLayoutWithIsShowingKeyboard:(BOOL)isShowingKeyboard {
     __block CGRect textFieldFrame = self.textField.frame;
@@ -179,23 +186,44 @@
                     break;
             }
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            CGPoint keyboardTopDestPoint = [[UIApplication sharedApplication].keyWindow convertPoint:srcPoint toView:weakSelf];
-            textFieldFrame.origin.x = keyboardTopDestPoint.x;
-            textFieldFrame.origin.y = keyboardTopDestPoint.y - (isShowingKeyboard ? CGRectGetHeight(textFieldFrame) : 0);
-            textFieldFrame.size.width = width;
-            __weak typeof(self) weakSelf = self;
-            [UIView animateWithDuration:self.keyboardAnimationDuration
-                             animations:^{
-                                 weakSelf.textField.frame = textFieldFrame;
-                             }];
-        });
+
+        CGPoint keyboardTopDestPoint = [[UIApplication sharedApplication].keyWindow convertPoint:srcPoint toView:weakSelf];
+        textFieldFrame.origin.x = keyboardTopDestPoint.x;
+        textFieldFrame.origin.y = keyboardTopDestPoint.y - (isShowingKeyboard ? CGRectGetHeight(textFieldFrame) : 0);
+        textFieldFrame.size.width = width;
+        [UIView animateWithDuration:self.keyboardAnimationDuration
+                         animations:^{
+                             weakSelf.textField.frame = textFieldFrame;
+                         }];
+
     }
     
     
 //    NSLog(@"screenBounds(%@)  %s", NSStringFromCGRect([UIScreen mainScreen].bounds) , __func__);
 //    NSLog(@"keyboardFrame(%@)  %s", NSStringFromCGRect(self.keyboardFrame), __func__);
 }
+ */
+
+// 适配textField的layout
+- (void)adjustTextFieldLayoutWithIsShowingKeyboard:(BOOL)isShowingKeyboard {
+    __weak typeof(self) weakSelf = self;
+        CGRect textFieldFrame = weakSelf.textField.frame;
+        if (isShowingKeyboard) {
+            CGPoint keyboardLeftTopPoint = [weakSelf.screenCalcHelper keyBoardLeftUpPointWithKeyboardFrame:weakSelf.keyboardFrame toView:weakSelf];
+            textFieldFrame.origin.x = keyboardLeftTopPoint.x;
+            textFieldFrame.origin.y = keyboardLeftTopPoint.y - CGRectGetHeight(textFieldFrame);
+        } else {
+            CGPoint screenLeftBottomPoint = [weakSelf.screenCalcHelper screenLeftBottomPointToView:weakSelf];
+            textFieldFrame.origin.x = screenLeftBottomPoint.x;
+            textFieldFrame.origin.y = screenLeftBottomPoint.y;
+        }
+        textFieldFrame.size.width = CGRectGetWidth([weakSelf.screenCalcHelper screenBounds]);
+        [UIView animateWithDuration:weakSelf.keyboardAnimationDuration
+                         animations:^{
+                             weakSelf.textField.frame = textFieldFrame;
+                         }];
+}
+
 
 #pragma mark - 
 - (void)adjustSubViewsLayout {
