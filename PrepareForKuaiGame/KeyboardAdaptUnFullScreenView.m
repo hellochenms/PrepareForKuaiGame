@@ -143,7 +143,6 @@
                      }];
 }
 
-
 #pragma mark - 
 - (void)adjustSubViewsLayout {
     CGRect buttonFrame = CGRectMake(10, 10, CGRectGetWidth(self.bounds) - 10 * 2, 44);

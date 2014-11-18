@@ -12,7 +12,7 @@
 // 键盘显示时，其左上角的坐标（适配iOS7、iOS8下的横竖屏）
 - (CGPoint)keyBoardLeftUpPointWithKeyboardFrame:(CGRect)keyboardFrame toView:(UIView *)view {
     CGPoint keyboardLeftTopPoint = CGPointZero;
-    if (isIOS8) {
+    if ([self isForIOS8]) {
         keyboardLeftTopPoint = [[UIApplication sharedApplication].keyWindow convertPoint:CGPointMake(0, CGRectGetHeight([UIScreen mainScreen].bounds) - CGRectGetHeight(keyboardFrame)) toView:view];
     } else {
         CGPoint srcPoint = CGPointZero;
@@ -42,7 +42,7 @@
 // 屏幕左下角坐标（适配iOS7、iOS8下的横竖屏）
 - (CGPoint)screenLeftBottomPointToView:(UIView *)view {
     CGPoint screenLeftBottomPoint = CGPointZero;
-    if (isIOS8) {
+    if ([self isForIOS8]) {
         screenLeftBottomPoint = [[UIApplication sharedApplication].keyWindow convertPoint:CGPointMake(0, CGRectGetHeight([UIScreen mainScreen].bounds)) toView:view];
     } else {
         CGPoint srcPoint = CGPointZero;
@@ -71,7 +71,7 @@
 // 屏幕尺寸（适配iOS7、iOS8下的横竖屏）
 - (CGRect)screenBounds {
     CGRect frame = CGRectZero;
-    if (isIOS8) {
+    if ([self isForIOS8]) {
         frame = [UIScreen mainScreen].bounds;
     } else {
         switch ([UIDevice currentDevice].orientation) {
@@ -93,6 +93,11 @@
     }
     
     return frame;
+}
+
+#pragma mark - tools
+- (BOOL)isForIOS8{
+    return ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0);
 }
 
 @end
