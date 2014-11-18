@@ -125,22 +125,21 @@
 
 // 适配textField的layout
 - (void)adjustTextFieldLayoutWithIsShowingKeyboard:(BOOL)isShowingKeyboard {
-    __weak typeof(self) weakSelf = self;
-        CGRect textFieldFrame = weakSelf.textField.frame;
-        if (isShowingKeyboard) {
-            CGPoint keyboardLeftTopPoint = [weakSelf.screenCalcHelper keyBoardLeftUpPointWithKeyboardFrame:weakSelf.keyboardFrame toView:weakSelf];
-            textFieldFrame.origin.x = keyboardLeftTopPoint.x;
-            textFieldFrame.origin.y = keyboardLeftTopPoint.y - CGRectGetHeight(textFieldFrame);
-        } else {
-            CGPoint screenLeftBottomPoint = [weakSelf.screenCalcHelper screenLeftBottomPointToView:weakSelf];
-            textFieldFrame.origin.x = screenLeftBottomPoint.x;
-            textFieldFrame.origin.y = screenLeftBottomPoint.y;
-        }
-        textFieldFrame.size.width = CGRectGetWidth([weakSelf.screenCalcHelper screenBounds]);
-        [UIView animateWithDuration:weakSelf.keyboardAnimationDuration
-                         animations:^{
-                             weakSelf.textField.frame = textFieldFrame;
-                         }];
+    CGRect textFieldFrame = self.textField.frame;
+    if (isShowingKeyboard) {
+        CGPoint keyboardLeftTopPoint = [self.screenCalcHelper keyBoardLeftUpPointWithKeyboardFrame:self.keyboardFrame toView:self];
+        textFieldFrame.origin.x = keyboardLeftTopPoint.x;
+        textFieldFrame.origin.y = keyboardLeftTopPoint.y - CGRectGetHeight(textFieldFrame);
+    } else {
+        CGPoint screenLeftBottomPoint = [self.screenCalcHelper screenLeftBottomPointToView:self];
+        textFieldFrame.origin.x = screenLeftBottomPoint.x;
+        textFieldFrame.origin.y = screenLeftBottomPoint.y;
+    }
+    textFieldFrame.size.width = CGRectGetWidth([self.screenCalcHelper screenBounds]);
+    [UIView animateWithDuration:self.keyboardAnimationDuration
+                     animations:^{
+                         self.textField.frame = textFieldFrame;
+                     }];
 }
 
 
