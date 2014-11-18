@@ -9,7 +9,7 @@
 #import "M2ScreenCalcHelper.h"
 
 @implementation M2ScreenCalcHelper
-// 键盘显示时，其左上角的坐标（适配iOS7、iOS8）
+// 键盘显示时，其左上角的坐标（适配iOS7、iOS8下的横竖屏）
 - (CGPoint)keyBoardLeftUpPointWithKeyboardFrame:(CGRect)keyboardFrame toView:(UIView *)view {
     CGPoint keyboardLeftTopPoint = CGPointZero;
     if (isIOS8) {
@@ -39,7 +39,7 @@
     return keyboardLeftTopPoint;
 }
 
-// 屏幕左下角坐标（适配iOS7、iOS8）
+// 屏幕左下角坐标（适配iOS7、iOS8下的横竖屏）
 - (CGPoint)screenLeftBottomPointToView:(UIView *)view {
     CGPoint screenLeftBottomPoint = CGPointZero;
     if (isIOS8) {
@@ -68,7 +68,7 @@
     return screenLeftBottomPoint;
 }
 
-// 屏幕尺寸（适配iOS7、iOS8）
+// 屏幕尺寸（适配iOS7、iOS8下的横竖屏）
 - (CGRect)screenBounds {
     CGRect frame = CGRectZero;
     if (isIOS8) {

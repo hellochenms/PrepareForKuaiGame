@@ -11,10 +11,10 @@
 #import <UIKit/UIKit.h>
 
 @interface M2ScreenCalcHelper : NSObject
-// 键盘显示时，其左上角的坐标（适配iOS7、iOS8）
+// 键盘显示时，其左上角的坐标（适配iOS7、iOS8下的横竖屏）
 - (CGPoint)keyBoardLeftUpPointWithKeyboardFrame:(CGRect)keyboardFrame toView:(UIView *)view;
-// 屏幕左下角坐标（适配iOS7、iOS8）
+// 屏幕左下角坐标（适配iOS7、iOS8下的横竖屏）
 - (CGPoint)screenLeftBottomPointToView:(UIView *)view;
-// 屏幕尺寸（适配iOS7、iOS8）
+// 屏幕尺寸（（适配iOS7、iOS8下的横竖屏）
 - (CGRect)screenBounds;
 @end
