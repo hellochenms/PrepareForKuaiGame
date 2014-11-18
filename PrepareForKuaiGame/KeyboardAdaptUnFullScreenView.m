@@ -136,9 +136,10 @@
         textFieldFrame.origin.y = screenLeftBottomPoint.y;
     }
     textFieldFrame.size.width = CGRectGetWidth([self.screenCalcHelper screenBounds]);
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:self.keyboardAnimationDuration
                      animations:^{
-                         self.textField.frame = textFieldFrame;
+                         weakSelf.textField.frame = textFieldFrame;
                      }];
 }
 
