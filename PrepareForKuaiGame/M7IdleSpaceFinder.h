@@ -1,9 +1,9 @@
 //
 //  M7IdleSpaceFinder.h
-//  PrepareForKuaiGame
+//  chenms.m2.m7
 //
-//  Created by Chen Meisong on 14-11-5.
-//  Copyright (c) 2014年 chenms.m2. All rights reserved.
+//  Created by Chen Meisong on 14-11-6.
+//  Copyright (c) 2014年 chenms.m2 All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

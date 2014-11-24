@@ -82,6 +82,11 @@
                                                  selector:@selector(onApplicationDidChangeStatusBarOrientation:)
                                                      name:UIApplicationDidChangeStatusBarOrientationNotification
                                                    object:nil];
+        // textField文字改变通知
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onTextFieldTextDidChange:)
+                                                     name:UITextFieldTextDidChangeNotification
+                                                   object:_textField];
         
         // 异步调整textField位置
         __weak typeof(self) weakSelf = self;
@@ -157,6 +162,11 @@
     [textField resignFirstResponder];
     
     return YES;
+}
+#pragma mark - textField文字改变通知
+- (void)onTextFieldTextDidChange:(NSNotification *)notication {
+    UITextField *textField = (UITextField *)notication.object;
+    NSLog(@"textField文字改变为(%@)  %s", textField.text, __func__);
 }
 
 #pragma mark - dealloc

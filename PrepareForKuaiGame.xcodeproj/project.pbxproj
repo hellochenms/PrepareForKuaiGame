@@ -108,7 +108,7 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		9948E4B01A199DB4000E841F /* 3.键盘适配iOS8 */ = {
+		9948E4B01A199DB4000E841F /* 3.screen尺寸及键盘适配 */ = {
 			isa = PBXGroup;
 			children = (
 				9948E4B11A199E0A000E841F /* KeyboardAdaptViewController.h */,
@@ -120,7 +120,7 @@
 				9948E4BD1A19F47D000E841F /* M2ScreenCalcHelper.h */,
 				9948E4BE1A19F47D000E841F /* M2ScreenCalcHelper.m */,
 			);
-			name = "3.键盘适配iOS8";
+			name = "3.screen尺寸及键盘适配";
 			sourceTree = "<group>";
 		};
 		9985D9CE19F5F65C00A0506B /* 2.中文转拼音 */ = {
@@ -185,7 +185,7 @@
 				99DFE20719EA941F008B20F2 /* 1.图片吐槽 */,
 				99DEE2DE1A0B58F000D6F734 /* 1+.图片吐槽无线 */,
 				9985D9CE19F5F65C00A0506B /* 2.中文转拼音 */,
-				9948E4B01A199DB4000E841F /* 3.键盘适配iOS8 */,
+				9948E4B01A199DB4000E841F /* 3.screen尺寸及键盘适配 */,
 				99DFE1E319EA91F0008B20F2 /* Images.xcassets */,
 				993376BE1A08BB8B00126087 /* Resources */,
 				99DFE1D819EA91F0008B20F2 /* Supporting Files */,

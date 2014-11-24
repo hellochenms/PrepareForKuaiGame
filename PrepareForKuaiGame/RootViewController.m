@@ -25,7 +25,7 @@
                     @[@"图片吐槽", @"ImageCommentViewController"],
                     @[@"图片吐槽无线", @"ImageCommentNoLineViewController"],
                     @[@"中文转拼音", @"ZhToPinyinViewController"],
-                    @[@"键盘适配iOS8", @"KeyboardAdaptViewController"],
+                    @[@"screen尺寸及键盘适配", @"KeyboardAdaptViewController"],
                     ];
     }
     return self;

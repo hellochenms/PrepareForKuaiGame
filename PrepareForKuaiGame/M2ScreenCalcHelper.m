@@ -16,18 +16,21 @@
         keyboardLeftTopPoint = [[UIApplication sharedApplication].keyWindow convertPoint:CGPointMake(0, CGRectGetHeight([UIScreen mainScreen].bounds) - CGRectGetHeight(keyboardFrame)) toView:view];
     } else {
         CGPoint srcPoint = CGPointZero;
-        switch ([UIDevice currentDevice].orientation) {
-            case UIDeviceOrientationPortrait:
+        // 使用[UIDevice currentDevice].orientation不靠谱；
+ //        switch ([UIDevice currentDevice].orientation)
+        switch ([UIApplication sharedApplication].statusBarOrientation) {
+            case UIInterfaceOrientationPortrait:
                 srcPoint = CGPointMake(0, CGRectGetHeight([UIScreen mainScreen].bounds) - CGRectGetHeight(keyboardFrame));
                 break;
-            case UIDeviceOrientationPortraitUpsideDown:
+            case UIInterfaceOrientationPortraitUpsideDown:
                 srcPoint = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight(keyboardFrame));
                 break;
-            case UIDeviceOrientationLandscapeLeft:
+                // 注意UIInterfaceOrientationLandscapeRight与UIDeviceOrientationLandscapeLeft对应，虽然有道理，但真是坑；
+            case UIInterfaceOrientationLandscapeRight:
                 // 注意，iOS7及以前，横屏时，键盘的height取到的是宽，width取到的是高；
                 srcPoint = CGPointMake(CGRectGetWidth(keyboardFrame), 0);
                 break;
-            case UIDeviceOrientationLandscapeRight:
+            case UIInterfaceOrientationLandscapeLeft:
                 srcPoint = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds) - CGRectGetWidth(keyboardFrame), CGRectGetHeight([UIScreen mainScreen].bounds));
                 break;
             default:
@@ -46,17 +49,17 @@
         screenLeftBottomPoint = [[UIApplication sharedApplication].keyWindow convertPoint:CGPointMake(0, CGRectGetHeight([UIScreen mainScreen].bounds)) toView:view];
     } else {
         CGPoint srcPoint = CGPointZero;
-        switch ([UIDevice currentDevice].orientation) {
-            case UIDeviceOrientationPortrait:
+        switch ([UIApplication sharedApplication].statusBarOrientation) {
+            case UIInterfaceOrientationPortrait:
                 srcPoint = CGPointMake(0, CGRectGetHeight([UIScreen mainScreen].bounds));
                 break;
-            case UIDeviceOrientationPortraitUpsideDown:
+            case UIInterfaceOrientationPortraitUpsideDown:
                 srcPoint = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds), 0);
                 break;
-            case UIDeviceOrientationLandscapeLeft:
+            case UIInterfaceOrientationLandscapeRight:
                 srcPoint = CGPointMake(0, 0);
                 break;
-            case UIDeviceOrientationLandscapeRight:
+            case UIInterfaceOrientationLandscapeLeft:
                 srcPoint = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds));
                 break;
             default:
@@ -74,22 +77,20 @@
     if ([self isForIOS8]) {
         frame = [UIScreen mainScreen].bounds;
     } else {
-        switch ([UIDevice currentDevice].orientation) {
-            case UIDeviceOrientationPortrait:
-            case UIDeviceOrientationPortraitUpsideDown:
+        switch ([UIApplication sharedApplication].statusBarOrientation) {
+            case UIInterfaceOrientationPortrait:
+            case UIInterfaceOrientationPortraitUpsideDown:
                 frame.size.width = CGRectGetWidth([UIScreen mainScreen].bounds);
                 frame.size.height = CGRectGetHeight([UIScreen mainScreen].bounds);
                 break;
-            case UIDeviceOrientationLandscapeLeft:
-            case UIDeviceOrientationLandscapeRight:
+            case UIInterfaceOrientationLandscapeRight:
+            case UIInterfaceOrientationLandscapeLeft:
                 frame.size.width = CGRectGetHeight([UIScreen mainScreen].bounds);
                 frame.size.height = CGRectGetWidth([UIScreen mainScreen].bounds);
                 break;
             default:
-                frame.size.width = CGRectGetWidth([UIScreen mainScreen].bounds);
-                frame.size.height = CGRectGetHeight([UIScreen mainScreen].bounds);
                 break;
-        };
+        }
     }
     
     return frame;
