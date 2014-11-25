@@ -13,6 +13,8 @@
 		9948E4B91A199EEA000E841F /* KeyboardAdaptUnFullScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9948E4B81A199EEA000E841F /* KeyboardAdaptUnFullScreenView.m */; };
 		9948E4BC1A19D4AB000E841F /* PFKGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9948E4BB1A19D4AB000E841F /* PFKGNavigationController.m */; };
 		9948E4BF1A19F47D000E841F /* M2ScreenCalcHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9948E4BE1A19F47D000E841F /* M2ScreenCalcHelper.m */; };
+		996EBF0A1A24627200345855 /* HtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 996EBF091A24627200345855 /* HtmlViewController.m */; };
+		996EBF0D1A2469E000345855 /* html.html in Resources */ = {isa = PBXBuildFile; fileRef = 996EBF0C1A2469E000345855 /* html.html */; };
 		9985D9D119F5F6A400A0506B /* ZhToPinyinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9985D9D019F5F6A400A0506B /* ZhToPinyinViewController.m */; };
 		99DEE2AB1A09C98E00D6F734 /* M7IdleSpaceFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DEE2AA1A09C98E00D6F734 /* M7IdleSpaceFinder.m */; };
 		99DEE2CE1A0A1DD800D6F734 /* ImageCommentLinesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DEE2CD1A0A1DD800D6F734 /* ImageCommentLinesView.m */; };
@@ -44,6 +46,9 @@
 		9948E4BB1A19D4AB000E841F /* PFKGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFKGNavigationController.m; sourceTree = "<group>"; };
 		9948E4BD1A19F47D000E841F /* M2ScreenCalcHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2ScreenCalcHelper.h; sourceTree = "<group>"; };
 		9948E4BE1A19F47D000E841F /* M2ScreenCalcHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2ScreenCalcHelper.m; sourceTree = "<group>"; };
+		996EBF081A24627200345855 /* HtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlViewController.h; sourceTree = "<group>"; };
+		996EBF091A24627200345855 /* HtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlViewController.m; sourceTree = "<group>"; };
+		996EBF0C1A2469E000345855 /* html.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html.html; sourceTree = "<group>"; };
 		9985D9CF19F5F6A400A0506B /* ZhToPinyinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhToPinyinViewController.h; sourceTree = "<group>"; };
 		9985D9D019F5F6A400A0506B /* ZhToPinyinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZhToPinyinViewController.m; sourceTree = "<group>"; };
 		99DEE2A91A09C98E00D6F734 /* M7IdleSpaceFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M7IdleSpaceFinder.h; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 		993376BE1A08BB8B00126087 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				996EBF0B1A2469E000345855 /* files */,
 				993376BF1A08BB8B00126087 /* images */,
 			);
 			path = Resources;
@@ -121,6 +127,23 @@
 				9948E4BE1A19F47D000E841F /* M2ScreenCalcHelper.m */,
 			);
 			name = "3.screen尺寸及键盘适配";
+			sourceTree = "<group>";
+		};
+		996EBF071A24621D00345855 /* 4.html */ = {
+			isa = PBXGroup;
+			children = (
+				996EBF081A24627200345855 /* HtmlViewController.h */,
+				996EBF091A24627200345855 /* HtmlViewController.m */,
+			);
+			name = 4.html;
+			sourceTree = "<group>";
+		};
+		996EBF0B1A2469E000345855 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				996EBF0C1A2469E000345855 /* html.html */,
+			);
+			path = files;
 			sourceTree = "<group>";
 		};
 		9985D9CE19F5F65C00A0506B /* 2.中文转拼音 */ = {
@@ -186,6 +209,7 @@
 				99DEE2DE1A0B58F000D6F734 /* 1+.图片吐槽无线 */,
 				9985D9CE19F5F65C00A0506B /* 2.中文转拼音 */,
 				9948E4B01A199DB4000E841F /* 3.screen尺寸及键盘适配 */,
+				996EBF071A24621D00345855 /* 4.html */,
 				99DFE1E319EA91F0008B20F2 /* Images.xcassets */,
 				993376BE1A08BB8B00126087 /* Resources */,
 				99DFE1D819EA91F0008B20F2 /* Supporting Files */,
@@ -273,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				993376C11A08BC5700126087 /* temp_image@2x.png in Resources */,
+				996EBF0D1A2469E000345855 /* html.html in Resources */,
 				99DFE1DC19EA91F0008B20F2 /* InfoPlist.strings in Resources */,
 				99DFE1E419EA91F0008B20F2 /* Images.xcassets in Resources */,
 			);
@@ -302,6 +327,7 @@
 				99DEE2E41A0B598400D6F734 /* ImageCommentNoLineView.m in Sources */,
 				99DFE1DE19EA91F0008B20F2 /* main.m in Sources */,
 				99DFE20219EA9240008B20F2 /* RootViewController.m in Sources */,
+				996EBF0A1A24627200345855 /* HtmlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,6 +26,7 @@
                     @[@"图片吐槽无线", @"ImageCommentNoLineViewController"],
                     @[@"中文转拼音", @"ZhToPinyinViewController"],
                     @[@"screen尺寸及键盘适配", @"KeyboardAdaptViewController"],
+                    @[@"html", @"HtmlViewController"],
                     ];
     }
     return self;
