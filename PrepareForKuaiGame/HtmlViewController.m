@@ -18,13 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _webView = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _webView.delegate = self;
     [self.view addSubview:_webView];
     
     //
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"html" ofType:@"html"];
     NSURL *baseURL = [[NSURL alloc] initFileURLWithPath:[NSBundle mainBundle].bundlePath];
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    _webView.delegate = self;
     [_webView loadHTMLString:htmlString baseURL:baseURL];
 
 }

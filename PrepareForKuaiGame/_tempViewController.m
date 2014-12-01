@@ -8,7 +8,7 @@
 
 #import "_tempViewController.h"
 
-@interface _tempViewController ()<UITextFieldDelegate>
+@interface _tempViewController ()<UIActionSheetDelegate>
 @property (nonatomic) UITextField *textField;
 @end
 
@@ -39,8 +39,26 @@
 }
 
 - (void)onTapButton{
-    [[UIDevice currentDevice] userInterfaceIdiom];
-    NSLog(@"%d  %s", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad), __func__);
+//    NSLog(@"%d  %s", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad), __func__);
+    
+    UIActionSheet *actionSheetView = [[UIActionSheet alloc] initWithTitle:@"title"
+                                                                 delegate:self
+                                                        cancelButtonTitle:nil
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:nil];
+    actionSheetView.cancelButtonIndex = 2;
+    
+    [actionSheetView addButtonWithTitle:@"确定"];
+    [actionSheetView addButtonWithTitle:@"其他"];
+    
+    [actionSheetView addButtonWithTitle:@"取消"];
+    [actionSheetView showInView:self.view];
+    
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"buttonIndex(%d)  %s", buttonIndex, __func__);
 }
 
 @end

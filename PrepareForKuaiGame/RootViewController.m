@@ -27,6 +27,9 @@
                     @[@"中文转拼音", @"ZhToPinyinViewController"],
                     @[@"screen尺寸及键盘适配", @"KeyboardAdaptViewController"],
                     @[@"html", @"HtmlViewController"],
+                    @[@"item浏览", @"ItemScrollViewController"],
+                    @[@"AlertView等适配iOS8", @"AlertAdapterViewController"],
+                    @[@"从1到N的tab", @"From1ToNViewController"],
                     ];
     }
     return self;
