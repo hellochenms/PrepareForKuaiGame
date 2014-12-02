@@ -1,25 +1,23 @@
 //
-//  M2AlertHelper.m
+//  M2AlertOldStyleHelper.m
 //  chenms.m2
 //
-//  Created by Chen Meisong on 14/12/1.
+//  Created by Chen Meisong on 14/12/2.
 //  Copyright (c) 2014年 chenms.m2. All rights reserved.
 //
 
-#import "M2AlertHelper.h"
+#import "M2AlertOldStyleHelper.h"
 
-const NSString *kM2AH_Key_Title = @"M2AH_Key_Title";
-const NSString *kM2AH_Key_Handler = @"M2AH_Key_Handler";
-
-@interface M2AlertHelper ()<UIAlertViewDelegate, UIActionSheetDelegate>
+@interface M2AlertOldStyleHelper ()<UIAlertViewDelegate, UIActionSheetDelegate>
 @property (nonatomic) BOOL isIOS8OrAbove;
-@property (nonatomic) NSDictionary *cancelActionDict;
-@property (nonatomic) NSArray *otherActionDicts;
+@property (nonatomic, copy) M2AOSHIntegerHandler tapButtonHandler;
+@property (nonatomic) NSInteger otherButtonTitlesCount;
 @end
 
-@implementation M2AlertHelper
+@implementation M2AlertOldStyleHelper
+
 + (instancetype)sharedInstance {
-    static M2AlertHelper *s_instance = nil;
+    static M2AlertOldStyleHelper *s_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         s_instance = [self new];
@@ -39,106 +37,34 @@ const NSString *kM2AH_Key_Handler = @"M2AH_Key_Handler";
 #pragma mark - Alert
 - (void)showAlertWithTitle:(NSString *)title
                    message:(NSString *)message
-          cancelActionDict:(NSDictionary *)cancelActionDict
-          otherActionDicts:(NSArray *)otherActionDicts
+         cancelButtonTitle:(NSString *)cancelButtonTitle
+         otherButtonTitles:(NSArray *)otherButtonTitles
+          tapButtonHandler:(M2AOSHIntegerHandler)tapButtonHandler
    presentInViewController:(UIViewController *)presentInViewController {
     [self reset];
+    self.tapButtonHandler = tapButtonHandler;
     if (self.isIOS8OrAbove) {
+        __weak typeof(self) weakSelf = self;
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                                  message:message
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         // 取消按钮
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[cancelActionDict objectForKey:kM2AH_Key_Title]
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle
                                                                style:UIAlertActionStyleCancel
                                                              handler:^(UIAlertAction *action) {
-                                                                 M2AHVoidHandler handler = [cancelActionDict objectForKey:kM2AH_Key_Handler];
-                                                                 if (handler) {
-                                                                     handler();
+                                                                 if (weakSelf.tapButtonHandler) {
+                                                                     weakSelf.tapButtonHandler(0);
                                                                  }
                                                              }];
         [alertController addAction:cancelAction];
         
         // 其他按钮
-        [otherActionDicts enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
-            UIAlertAction *otherAction = [UIAlertAction actionWithTitle:[dict objectForKey:kM2AH_Key_Title]
-                                                               style:UIAlertActionStyleDefault
-                                                             handler:^(UIAlertAction *action) {
-                                                                 M2AHVoidHandler handler = [dict objectForKey:kM2AH_Key_Handler];
-                                                                 if (handler) {
-                                                                     handler();
-                                                                 }
-                                                             }];
-            [alertController addAction:otherAction];
-        }];
-        
-        // 弹出
-        if (!presentInViewController) {
-            presentInViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-        }
-        [presentInViewController presentViewController:alertController
-                                              animated:YES
-                                            completion:nil];
-    } else {
-        self.cancelActionDict = cancelActionDict;
-        self.otherActionDicts = otherActionDicts;
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                            message:message
-                                                           delegate:self
-                                                  cancelButtonTitle:[cancelActionDict objectForKey:kM2AH_Key_Title]
-                                                  otherButtonTitles:nil];
-        [otherActionDicts enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
-            [alertView addButtonWithTitle:[dict objectForKey:kM2AH_Key_Title]];
-        }];
-        [alertView show];
-    }
-}
-#pragma mark UIAlertViewDelegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        M2AHVoidHandler handler = [self.cancelActionDict objectForKey:kM2AH_Key_Handler];
-        if (handler) {
-            handler();
-        }
-    } else {
-        NSDictionary *actionDict = [self.otherActionDicts objectAtIndex:buttonIndex - 1];
-        M2AHVoidHandler handler = [actionDict objectForKey:kM2AH_Key_Handler];
-        if (handler) {
-            handler();
-        }
-    }
-}
-
-#pragma mark - ActionSheet
-- (void)showActionSheetWithTitle:(NSString *)title
-                         message:(NSString *)message
-                cancelActionDict:(NSDictionary *)cancelActionDict
-                otherActionDicts:(NSArray *)otherActionDicts
-                      showInView:(UIView *)showInView
-         presentInViewController:(UIViewController *)presentInViewController {
-    [self reset];
-    if (self.isIOS8OrAbove) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                                 message:message
-                                                                          preferredStyle:UIAlertControllerStyleActionSheet];
-        // 取消按钮
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[cancelActionDict objectForKey:kM2AH_Key_Title]
-                                                               style:UIAlertActionStyleCancel
-                                                             handler:^(UIAlertAction *action) {
-                                                                 M2AHVoidHandler handler = [cancelActionDict objectForKey:kM2AH_Key_Handler];
-                                                                 if (handler) {
-                                                                     handler();
-                                                                 }
-                                                             }];
-        [alertController addAction:cancelAction];
-        
-        // 其他按钮
-        [otherActionDicts enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
-            UIAlertAction *otherAction = [UIAlertAction actionWithTitle:[dict objectForKey:kM2AH_Key_Title]
+        [otherButtonTitles enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx, BOOL *stop) {
+            UIAlertAction *otherAction = [UIAlertAction actionWithTitle:title
                                                                   style:UIAlertActionStyleDefault
                                                                 handler:^(UIAlertAction *action) {
-                                                                    M2AHVoidHandler handler = [dict objectForKey:kM2AH_Key_Handler];
-                                                                    if (handler) {
-                                                                        handler();
+                                                                    if (weakSelf.tapButtonHandler) {
+                                                                        weakSelf.tapButtonHandler(idx + 1);
                                                                     }
                                                                 }];
             [alertController addAction:otherAction];
@@ -152,20 +78,82 @@ const NSString *kM2AH_Key_Handler = @"M2AH_Key_Handler";
                                               animated:YES
                                             completion:nil];
     } else {
-        self.cancelActionDict = cancelActionDict;
-        self.otherActionDicts = otherActionDicts;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:cancelButtonTitle
+                                                  otherButtonTitles:nil];
+        [otherButtonTitles enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx, BOOL *stop) {
+            [alertView addButtonWithTitle:title];
+        }];
+        [alertView show];
+    }
+}
+#pragma mark UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (self.tapButtonHandler) {
+        self.tapButtonHandler(buttonIndex);
+    }
+}
+
+#pragma mark - ActionSheet
+- (void)showActionSheetWithTitle:(NSString *)title
+                         message:(NSString *)message
+               cancelButtonTitle:(NSString *)cancelButtonTitle
+               otherButtonTitles:(NSArray *)otherButtonTitles
+                tapButtonHandler:(M2AOSHIntegerHandler)tapButtonHandler
+                      showInView:(UIView *)showInView
+         presentInViewController:(UIViewController *)presentInViewController {
+    [self reset];
+    self.tapButtonHandler = tapButtonHandler;
+    if (self.isIOS8OrAbove) {
+        __weak typeof(self) weakSelf = self;
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                 message:message
+                                                                          preferredStyle:UIAlertControllerStyleActionSheet];
+        // 取消按钮
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction *action) {
+                                                                 if (weakSelf.tapButtonHandler) {
+                                                                     weakSelf.tapButtonHandler(0);
+                                                                 }
+                                                             }];
+        [alertController addAction:cancelAction];
+        
+        // 其他按钮
+        [otherButtonTitles enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx, BOOL *stop) {
+            UIAlertAction *otherAction = [UIAlertAction actionWithTitle:title
+                                                                  style:UIAlertActionStyleDefault
+                                                                handler:^(UIAlertAction *action) {
+                                                                    if (weakSelf.tapButtonHandler) {
+                                                                        weakSelf.tapButtonHandler(idx + 1);
+                                                                    }
+                                                                }];
+            [alertController addAction:otherAction];
+        }];
+        
+        // 弹出
+        if (!presentInViewController) {
+            presentInViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+        }
+        [presentInViewController presentViewController:alertController
+                                              animated:YES
+                                            completion:nil];
+    } else {
         UIActionSheet *actionSheetView = [[UIActionSheet alloc] initWithTitle:title
                                                                      delegate:self
                                                             cancelButtonTitle:nil
                                                        destructiveButtonTitle:nil
                                                             otherButtonTitles:nil];
+        self.otherButtonTitlesCount = [otherButtonTitles count];
         // 其他按钮
-        [otherActionDicts enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
-            [actionSheetView addButtonWithTitle:[dict objectForKey:kM2AH_Key_Title]];
+        [otherButtonTitles enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx, BOOL *stop) {
+            [actionSheetView addButtonWithTitle:title];
         }];
         // 取消按钮
-        [actionSheetView addButtonWithTitle:[cancelActionDict objectForKey:kM2AH_Key_Title]];
-        actionSheetView.cancelButtonIndex = [otherActionDicts count];
+        [actionSheetView addButtonWithTitle:cancelButtonTitle];
+        actionSheetView.cancelButtonIndex = [otherButtonTitles count];
         
         // 弹出
         [actionSheetView showInView:showInView];
@@ -173,24 +161,21 @@ const NSString *kM2AH_Key_Handler = @"M2AH_Key_Handler";
 }
 #pragma mark UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        M2AHVoidHandler handler = [self.cancelActionDict objectForKey:kM2AH_Key_Handler];
-        if (handler) {
-            handler();
-        }
-    } else {
-        NSDictionary *actionDict = [self.otherActionDicts objectAtIndex:buttonIndex - 1];
-        M2AHVoidHandler handler = [actionDict objectForKey:kM2AH_Key_Handler];
-        if (handler) {
-            handler();
+    // 注意：addButtonWithTitle为了达到init方式的效果，cancel按钮的index不是0
+    //      但用户习惯上认为cancel是0，故在此做个转换
+    if (self.tapButtonHandler) {
+        if (buttonIndex == self.otherButtonTitlesCount) {
+            self.tapButtonHandler(0);
+        } else {
+            self.tapButtonHandler(buttonIndex + 1);
         }
     }
 }
 
 #pragma mark - reset
 - (void)reset {
-    self.cancelActionDict = nil;
-    self.otherActionDicts = nil;
+    self.tapButtonHandler = nil;
+    self.otherButtonTitlesCount = 0;
 }
 
 @end

@@ -39,6 +39,7 @@
 		99DFE20519EA924F008B20F2 /* _tempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE20419EA924F008B20F2 /* _tempViewController.m */; };
 		99DFE20B19EAA2A5008B20F2 /* ImageCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE20A19EAA2A5008B20F2 /* ImageCommentViewController.m */; };
 		99DFE20E19EAA2C6008B20F2 /* ImageCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DFE20D19EAA2C6008B20F2 /* ImageCommentView.m */; };
+		99E902AB1A2D59CC009A9F42 /* M2AlertOldStyleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E902AA1A2D59CC009A9F42 /* M2AlertOldStyleHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,8 @@
 		99DFE20A19EAA2A5008B20F2 /* ImageCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCommentViewController.m; sourceTree = "<group>"; };
 		99DFE20C19EAA2C6008B20F2 /* ImageCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCommentView.h; sourceTree = "<group>"; };
 		99DFE20D19EAA2C6008B20F2 /* ImageCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCommentView.m; sourceTree = "<group>"; };
+		99E902A91A2D59CC009A9F42 /* M2AlertOldStyleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2AlertOldStyleHelper.h; sourceTree = "<group>"; };
+		99E902AA1A2D59CC009A9F42 /* M2AlertOldStyleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2AlertOldStyleHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				9943B5C71A2C4ABD0030D749 /* AlertAdapterViewController.m */,
 				99B4092D1A2C5736000C7C8C /* M2AlertHelper.h */,
 				99B4092E1A2C5736000C7C8C /* M2AlertHelper.m */,
+				99E902A91A2D59CC009A9F42 /* M2AlertOldStyleHelper.h */,
+				99E902AA1A2D59CC009A9F42 /* M2AlertOldStyleHelper.m */,
 			);
 			name = "6.AlertView等适配iOS8";
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				99DEE2D11A0B0CB600D6F734 /* M7SimpleIdleSpaceFinder.m in Sources */,
 				9985D9D119F5F6A400A0506B /* ZhToPinyinViewController.m in Sources */,
 				99B4092F1A2C5736000C7C8C /* M2AlertHelper.m in Sources */,
+				99E902AB1A2D59CC009A9F42 /* M2AlertOldStyleHelper.m in Sources */,
 				99DFE20B19EAA2A5008B20F2 /* ImageCommentViewController.m in Sources */,
 				99DFE20519EA924F008B20F2 /* _tempViewController.m in Sources */,
 				998055E91A26C42A003A150B /* ScrollItemsBrowser.m in Sources */,
