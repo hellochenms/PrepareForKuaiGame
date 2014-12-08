@@ -1,6 +1,6 @@
 //
 //  M2BadgeView.m
-//  PrepareForKuaiGame
+//  chenms.m2
 //
 //  Created by Chen Meisong on 14/12/8.
 //  Copyright (c) 2014年 chenms.m2. All rights reserved.
