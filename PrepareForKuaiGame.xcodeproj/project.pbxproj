@@ -23,6 +23,9 @@
 		99B4092F1A2C5736000C7C8C /* M2AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B4092E1A2C5736000C7C8C /* M2AlertHelper.m */; };
 		99B409651A2CC6DE000C7C8C /* From1ToNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B409641A2CC6DE000C7C8C /* From1ToNViewController.m */; };
 		99B409681A2CC906000C7C8C /* M2Item1ToNTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B409671A2CC906000C7C8C /* M2Item1ToNTabView.m */; };
+		99CE325D1A3549F8009938BC /* BadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE325C1A3549F8009938BC /* BadgeViewController.m */; };
+		99CE32601A354A0D009938BC /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE325F1A354A0C009938BC /* BadgeView.m */; };
+		99CE32631A354D62009938BC /* M2BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CE32621A354D62009938BC /* M2BadgeView.m */; };
 		99DEE2AB1A09C98E00D6F734 /* M7IdleSpaceFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DEE2AA1A09C98E00D6F734 /* M7IdleSpaceFinder.m */; };
 		99DEE2CE1A0A1DD800D6F734 /* ImageCommentLinesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DEE2CD1A0A1DD800D6F734 /* ImageCommentLinesView.m */; };
 		99DEE2D11A0B0CB600D6F734 /* M7SimpleIdleSpaceFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 99DEE2D01A0B0CB600D6F734 /* M7SimpleIdleSpaceFinder.m */; };
@@ -73,6 +76,12 @@
 		99B409641A2CC6DE000C7C8C /* From1ToNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = From1ToNViewController.m; sourceTree = "<group>"; };
 		99B409661A2CC906000C7C8C /* M2Item1ToNTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2Item1ToNTabView.h; sourceTree = "<group>"; };
 		99B409671A2CC906000C7C8C /* M2Item1ToNTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2Item1ToNTabView.m; sourceTree = "<group>"; };
+		99CE325B1A3549F8009938BC /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		99CE325C1A3549F8009938BC /* BadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
+		99CE325E1A354A0C009938BC /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
+		99CE325F1A354A0C009938BC /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
+		99CE32611A354D62009938BC /* M2BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2BadgeView.h; sourceTree = "<group>"; };
+		99CE32621A354D62009938BC /* M2BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2BadgeView.m; sourceTree = "<group>"; };
 		99DEE2A91A09C98E00D6F734 /* M7IdleSpaceFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M7IdleSpaceFinder.h; sourceTree = "<group>"; };
 		99DEE2AA1A09C98E00D6F734 /* M7IdleSpaceFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M7IdleSpaceFinder.m; sourceTree = "<group>"; };
 		99DEE2CC1A0A1DD800D6F734 /* ImageCommentLinesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCommentLinesView.h; sourceTree = "<group>"; };
@@ -216,6 +225,19 @@
 			name = "7.从1到N的tab";
 			sourceTree = "<group>";
 		};
+		99CE325A1A3549BE009938BC /* 8.适应文字长度的badge */ = {
+			isa = PBXGroup;
+			children = (
+				99CE325B1A3549F8009938BC /* BadgeViewController.h */,
+				99CE325C1A3549F8009938BC /* BadgeViewController.m */,
+				99CE325E1A354A0C009938BC /* BadgeView.h */,
+				99CE325F1A354A0C009938BC /* BadgeView.m */,
+				99CE32611A354D62009938BC /* M2BadgeView.h */,
+				99CE32621A354D62009938BC /* M2BadgeView.m */,
+			);
+			name = "8.适应文字长度的badge";
+			sourceTree = "<group>";
+		};
 		99DEE2DE1A0B58F000D6F734 /* 1+.图片吐槽无线 */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +296,7 @@
 				998055E31A26C387003A150B /* 5.item浏览 */,
 				9943B5C51A2C4A770030D749 /* 6.AlertView等适配iOS8 */,
 				99B409621A2CC696000C7C8C /* 7.从1到N的tab */,
+				99CE325A1A3549BE009938BC /* 8.适应文字长度的badge */,
 				99DFE1E319EA91F0008B20F2 /* Images.xcassets */,
 				993376BE1A08BB8B00126087 /* Resources */,
 				99DFE1D819EA91F0008B20F2 /* Supporting Files */,
@@ -376,6 +399,7 @@
 			files = (
 				99B409651A2CC6DE000C7C8C /* From1ToNViewController.m in Sources */,
 				9948E4BF1A19F47D000E841F /* M2ScreenCalcHelper.m in Sources */,
+				99CE325D1A3549F8009938BC /* BadgeViewController.m in Sources */,
 				99DEE2E11A0B595500D6F734 /* ImageCommentNoLineViewController.m in Sources */,
 				9948E4BC1A19D4AB000E841F /* PFKGNavigationController.m in Sources */,
 				998055E61A26C3F0003A150B /* ItemScrollViewController.m in Sources */,
@@ -386,6 +410,7 @@
 				99B409681A2CC906000C7C8C /* M2Item1ToNTabView.m in Sources */,
 				99DEE2D11A0B0CB600D6F734 /* M7SimpleIdleSpaceFinder.m in Sources */,
 				9985D9D119F5F6A400A0506B /* ZhToPinyinViewController.m in Sources */,
+				99CE32631A354D62009938BC /* M2BadgeView.m in Sources */,
 				99B4092F1A2C5736000C7C8C /* M2AlertHelper.m in Sources */,
 				99E902AB1A2D59CC009A9F42 /* M2AlertOldStyleHelper.m in Sources */,
 				99DFE20B19EAA2A5008B20F2 /* ImageCommentViewController.m in Sources */,
@@ -398,6 +423,7 @@
 				9943B5C81A2C4ABD0030D749 /* AlertAdapterViewController.m in Sources */,
 				99DFE1DE19EA91F0008B20F2 /* main.m in Sources */,
 				998055EC1A26C861003A150B /* ScrollItem.m in Sources */,
+				99CE32601A354A0D009938BC /* BadgeView.m in Sources */,
 				99DFE20219EA9240008B20F2 /* RootViewController.m in Sources */,
 				996EBF0A1A24627200345855 /* HtmlViewController.m in Sources */,
 			);

@@ -30,6 +30,7 @@
                     @[@"item浏览", @"ItemScrollViewController"],
                     @[@"AlertView等适配iOS8", @"AlertAdapterViewController"],
                     @[@"从1到N的tab", @"From1ToNViewController"],
+                    @[@"适应文字长度的badge", @"BadgeViewController"],
                     ];
     }
     return self;
